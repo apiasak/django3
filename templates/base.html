@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mysite.css' %}">
+  </head>
+  <body>
+    <section class="hero is-info is-medium is-bold">
+      <div class="hero-head">
+          <nav class="navbar">
+              <div class="container">
+                  <div class="navbar-brand">
+                      <a class="navbar-item" href="../">
+                          <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo">
+                      </a>
+                      <span class="navbar-burger burger" data-target="navbarMenu">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </span>
+                  </div>
+                  <div id="navbarMenu" class="navbar-menu">
+                      <div class="navbar-end">
+                          <div class="tabs is-right">
+                              <ul>
+                                  <li class="is-active"><a>Home</a></li>
+                                  <li><a href="">Blog Posts</a></li>
+                              </ul>
+                              <span class="navbar-item">
+                                  <a class="button is-white is-outlined" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/hero.html">
+                                      <span class="icon">
+                                          <i class="fa fa-github"></i>
+                                      </span>
+                                      <span title="Hello from the other side">Account</span>
+                                  </a>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </nav>
+      </div>
+      <div class="hero-body">
+          <div class="container has-text-centered">
+              {% block banner %}
+              {% endblock banner %}
+          </div>
+      </div>
+    </section>
+
+
+    <div class="container">
+      <div class="section">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </div>
+
+    <!-- START FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>My Site </strong> Copyright @2020
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- END FOOTER -->
+  </body>
+</html>
